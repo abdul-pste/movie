@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}Now Showing{% endblock %}
+<!--
+This template displays a list of movies with details like title, genre, duration, rating, poster, and showtimes.
 
-{% block content %}
+Features:
+- Iterates over the list of movies and dynamically renders their details.
+- Includes "Book Now" and "See More Details" buttons for each movie.
+- Provides a fallback message when no movies are available.
+
+Enhances user experience by presenting movies in a visually appealing grid layout.
+-->
+
+{% block title %}Now Showing{% endblock %} {% block content %}
 <div class="movies-container">
   {% for movie in movies %}
   <div class="movie-card">
@@ -24,11 +33,15 @@
         <strong>Date:</strong> {{ showtime.date|date:"M d, Y" }}
         <strong>Time:</strong> {{ showtime.time|time:"H:i" }}
         <strong>Hall:</strong> {{ showtime.cinema_hall }}
-        <a href="{% url 'book_showtime' showtime.id %}" class="book-now-btn">Book Now</a>
+        <a href="{% url 'book_showtime' showtime.id %}" class="book-now-btn"
+          >Book Now</a
+        >
       </li>
       {% endfor %}
     </ul>
-    <a href="{% url 'movie_detail' movie.id %}" class="book-now-btn">See More Details</a>
+    <a href="{% url 'movie_detail' movie.id %}" class="book-now-btn"
+      >See More Details</a
+    >
   </div>
   {% empty %}
   <div class="empty-message">
@@ -52,7 +65,11 @@
   }
 
   .add-showtime-btn:hover {
-    background: linear-gradient(135deg, #2e7d32, #4caf50); /* Reverse gradient */
+    background: linear-gradient(
+      135deg,
+      #2e7d32,
+      #4caf50
+    ); /* Reverse gradient */
     transform: scale(1.05); /* Slightly enlarge the button */
   }
 

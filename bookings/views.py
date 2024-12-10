@@ -1,3 +1,24 @@
+"""
+This file contains the view functions for handling requests and responses in the Movie Booking application.
+
+Functions:
+- `home`: Displays the search form and processes movie data from an external API.
+- `movie_list`: Displays a list of available movies with showtimes.
+- `movie_detail`: Displays detailed information about a specific movie and its showtimes.
+- `add_showtime`: Allows authenticated users to add a new showtime for a specific movie.
+- `book_showtime`: Handles the booking process for a selected showtime.
+- `booking_history`: Displays the booking history for the logged-in user.
+- `delete_all_bookings`: Allows users to clear their booking history.
+- `profile`: Displays the profile page for the logged-in user.
+- `edit_profile`: Allows users to update their profile information.
+- `custom_login`: Handles user login using email and password authentication.
+- `logout`/`custom_logout`: Logs out the current user.
+- `register`: Handles user registration using a custom user creation form.
+
+These views connect the front-end templates to the back-end logic, supporting features like user authentication, movie management, and booking functionality.
+"""
+
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserChangeForm

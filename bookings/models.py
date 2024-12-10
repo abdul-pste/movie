@@ -1,3 +1,16 @@
+"""
+This file defines the database models for the Movie Booking application.
+
+Models:
+- `User`: Custom user model that uses email as the unique identifier, with support for authentication.
+- `Movie`: Represents a movie with details like title, genre, duration, rating, and poster URL.
+- `Showtime`: Represents the screening details of a movie, including date, time, and cinema hall.
+- `Booking`: Represents a user's booking for a specific movie showtime, including ticket count and total cost.
+
+Each model defines its structure, relationships, and key fields, supporting the application's functionality for managing users, movies, showtimes, and bookings.
+"""
+
+
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 
